@@ -1,0 +1,14 @@
+* {
+	font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+.heroic {
+	margin: 4px;
+	padding: 8px;
+	display: inline-block;
+}
+
+#addHero {
+	padding: 8px;
+}
+
