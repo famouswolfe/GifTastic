@@ -49,7 +49,7 @@ $("#addHero").on("click", function(event){
 });
 
 //when you click a hero button it pulls 10 of the relevant gifs from giphy
-//$("#heroButtons").on("click", function(){
+
 function displayHero(){
 	$("#heroes-appear-here").empty();
 	var hero = $(this).attr("data-name");
@@ -65,7 +65,11 @@ function displayHero(){
 			var rating = results[j].rating;
 			var p = $("<p>").text("Rating: " + rating);
 			var heroImage = $("<img>");
+			heroImage.addClass("anImg");
 			heroImage.attr("src", results[j].images.fixed_height.url);
+			heroImage.attr("data-still", response.data[i].images.fixed_height.url);
+			heroImage.attr("data-animate" , response.data[i].images.fixed_height.url);
+			heroImage.attr("data-state", "still");
 			heroDiv.append(p);
 			heroDiv.append(heroImage);
 			$("#heroes-appear-here").prepend(heroDiv);
@@ -74,6 +78,21 @@ function displayHero(){
 		}
 	})
 }
+
+//animate and still function
+$(".anImg").on("click", function(){
+
+	var state = $(this).attr("data-state");
+		if(state === "still"){
+			  $(this).attr('src',$(this).attr("data-animate"));
+			  $(this).attr("data-state", "animate");
+	}
+		 else{
+			  $(this).attr('src',$(this).attr("data-still"));
+			  $(this).attr("data-state", "still");
+
+	}
+});
 
 $(document).on("click", ".heroic", displayHero);
 
