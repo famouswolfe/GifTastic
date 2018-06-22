@@ -97,4 +97,4 @@ $(".anImg").on("click", function(){
 $(document).on("click", ".heroic", displayHero);
 
 renderButtons();
-})
+});
