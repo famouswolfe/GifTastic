@@ -42,7 +42,6 @@ function renderButtons(){
 //get user input and render buttons upon clicking the submit button
 $("#addHero").on("click", function(event){
 	event.preventDefault();
-
 	var userInput = $("#text-input").val().trim();
 	heroes.push(userInput);
 	renderButtons();
@@ -59,8 +58,8 @@ function displayHero(){
 		method: "GET"
 	})
 	.done(function(response){
-		var results = response.data;
 		for (var j = 0; j < results.length; j++){
+			var results = response.data;
 			var heroDiv = $("<div class='heroic'>");
 			var rating = results[j].rating;
 			var p = $("<p>").text("Rating: " + rating);
