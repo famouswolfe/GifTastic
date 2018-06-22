@@ -60,13 +60,13 @@ function displayHero(){
 	})
 	.done(function(response){
 		var results = response.data;
-		for (var i = 0; i < results.length; i++){
+		for (var j = 0; j < results.length; j++){
 			var heroDiv = $("<div class='heroic'>");
-			var rating = results[i].rating;
+			var rating = results[j].rating;
 			var p = $("<p>").text("Rating: " + rating);
 			var heroImage = $("<img>");
 			heroImage.addClass("anImg");
-			heroImage.attr("src", results[i].images.fixed_height.url);
+			heroImage.attr("src", results[j].images.fixed_height.url);
 			heroImage.attr("data-still", response.data[i].images.fixed_height.url);
 			heroImage.attr("data-animate" , response.data[i].images.fixed_height.url);
 			heroImage.attr("data-state", "still");
@@ -97,4 +97,4 @@ $(".anImg").on("click", function(){
 $(document).on("click", ".heroic", displayHero);
 
 renderButtons();
-});
+})
