@@ -74,11 +74,8 @@ function displayHero(){
 			$("#heroes-appear-here").prepend(heroDiv);
 			console.log(heroButtons)
 			console.log(heroDiv)
-		}
-	})
-}
 
-//animate and still function
+		//animate and still function
 $(".anImg").on("click", function(){
 
 	var state = $(this).attr("data-state");
@@ -92,8 +89,10 @@ $(".anImg").on("click", function(){
 
 	}
 });
+		}
+	})
+}
 
 $(document).on("click", ".heroic", displayHero);
-
 renderButtons();
 })
