@@ -35,7 +35,7 @@ function displayHero(){
 		for (var j = 0; j < heroes.length; j++){
 			var results = response.data;
 			var heroDiv = $("<div class='heroic'>");
-			var p = $("<p>").text("Rating: " + rating);
+			var p =$('<p class="rating">');
 			p.text("Rating:" + results[j].rating);
 			heroDiv.append(p);
 			var heroImage = $("<img>");
