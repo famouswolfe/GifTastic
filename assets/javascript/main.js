@@ -58,7 +58,7 @@ function displayHero(){
 		method: "GET"
 	})
 	.done(function(response){
-		for (var j = 0; j < heroes.length; j++){
+		for(var j = 0; j < heroes.length; j++){
 			var results = response.data;
 			var heroDiv = $("<div class='heroic'>");
 			var rating = results[j].rating;
