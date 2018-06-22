@@ -23,7 +23,7 @@ var heroes = ["Goku", "Superman", "Spiderman", "Batman", "Optimus Prime", "Ganda
 //when you click a hero button it pulls 10 of the relevant gifs from giphy
 
 function displayHero(){
-	$("#heroes-appear-here").empty();
+	//$("#heroes-appear-here").empty();
 	var hero = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + hero + "&api_key=dc6zaTOxFJmzC&limit=10";
 
