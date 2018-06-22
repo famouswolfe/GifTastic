@@ -58,8 +58,8 @@ function displayHero(){
 		method: "GET"
 	})
 	.done(function(response){
-		for(var j = 0; j < heroes.length; j++){
-			var results = response.data;
+		var results = response.data;
+		for (var j = 0; j < results.length; j++){
 			var heroDiv = $("<div class='heroic'>");
 			var rating = results[j].rating;
 			var p = $("<p>").text("Rating: " + rating);
