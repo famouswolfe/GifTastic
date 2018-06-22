@@ -36,13 +36,13 @@ function displayHero(){
 			var results = response.data;
 			var heroDiv = $("<div class='heroic'>");
 			var p =$('<p class="rating">');
-            p.text("Rating:" + results[i].rating);
+            p.text("Rating:" + results[j].rating);
 			heroDiv.append(p);
 			var heroImage = $("<img>");
 			heroImage.addClass("anImg");
 			heroImage.attr("src", results[j].images.fixed_height.url);
-			heroImage.attr("data-still", response.data[i].images.fixed_height.url);
-			heroImage.attr("data-animate", response.data[i].images.fixed_height.url);
+			heroImage.attr("data-still", response.data[j].images.fixed_height.url);
+			heroImage.attr("data-animate", response.data[j].images.fixed_height.url);
 			heroImage.attr("data-state", "still");
 			heroDiv.append(heroImage);
 			$("#heroes-appear-here").prepend(heroDiv);
